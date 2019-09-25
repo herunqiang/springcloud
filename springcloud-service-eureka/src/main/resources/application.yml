@@ -1,0 +1,20 @@
+spring:
+  application:
+    # 对外的服务名
+    name: springcloud-service-eureka
+
+server:
+  #分配端口
+  port: 8001
+
+eureka:
+  instance:
+    #eureka的主机
+    hostname: localhost
+  client:
+    #不向注册中心注册自己
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      #对外提供的服务地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: springcloud-service-web-customer
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  datasource:
+    url: jdbc:oracle:thin:@127.0.0.1:1521/orcl
+    #GMT%2B8代表： 东八区
+    username: spring_cloud
+    password: spring_cloud
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+server:
+  port: 10003
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+
+#开启feign支持hystrix  (注意，一定要开启，旧版本默认支持，新版本默认关闭)
+# #修改调用超时时间（默认是1秒就算超时）
+# 设置为true表示开启熔断hystrix，设置false表示关闭熔断机制
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 10000 #10s就超时
+        readTimeout: 10000
+stu-provide:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule

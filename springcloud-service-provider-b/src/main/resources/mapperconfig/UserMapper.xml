@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hrq.springcloud.mapper.UserMapper">
+    <!-- 获取用户中所有的信息-->
+    <select id="getUser"  resultType="com.hrq.springcloud.entity.UserPojo" >
+            select * from user_t
+        </select>
+
+    <!-- 新增一条用户信息到数据库中 -->
+    <insert id="insertUser" useGeneratedKeys="false" parameterType="com.hrq.springcloud.entity.UserPojo" >
+            insert into user_t(id,user_name,password,age) values (#{id},#{userName},#{password},#{age})
+        </insert>
+</mapper>
