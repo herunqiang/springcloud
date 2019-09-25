@@ -10,6 +10,6 @@ springcloud-service-eureka:服务注册中心
 springcloud-service-lcn:分布式服务服务端
 springcloud-service-provider:服务生产者（被调用方）
 springcloud-service-provider-b:服务生产者b（被调用方）
-springcloud-service-web-provider:系统web层，主要负责系统服务的负载均衡（暂时使用的是轮询）。
+springcloud-service-web-provider:系统web层，主要负责系统服务的负载均衡（可以自定义）。
 
 
