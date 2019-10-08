@@ -2,11 +2,16 @@ spring:
   application:
     name: springcloud-service-web-customer
   thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
     encoding: UTF-8
+    cache: false
+    mode: HTML5
     servlet:
       content-type: text/html
+  mvc:
+    static-path-pattern: /templates/static/**
   datasource:
     url: jdbc:oracle:thin:@127.0.0.1:1521/orcl
     #GMT%2B8代表： 东八区
@@ -35,3 +40,4 @@ feign:
 stu-provide:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+# thymeleaf
