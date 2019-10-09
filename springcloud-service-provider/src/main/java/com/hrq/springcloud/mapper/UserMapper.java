@@ -20,4 +20,6 @@ public interface UserMapper {
  
     //新增一条用户信息到数据库中
     public void insertUser(UserPojo userPojo);
+
+    public UserPojo getUserById(Integer id);
 }

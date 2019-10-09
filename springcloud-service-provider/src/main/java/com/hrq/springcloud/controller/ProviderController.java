@@ -68,4 +68,31 @@ public class ProviderController {
         }
         return result;
     }
+    /**
+     * 新增用户
+     * @Author muyan
+     * @param userPojo
+     * @return
+     * 说明:
+     * 参数传递是的是对象，所以此处必须是用@RequestBody修饰参数，否则会出现参数传递是空
+     */
+    @RequestMapping(value = "/insertUser2")
+    public String insertUser2(  UserPojo userPojo){
+        String result = this.insertUser(userPojo);
+        return result;
+    }
+    /**
+     * 获取所有用户信息
+     * @Author muyan
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "getUserById",method = RequestMethod.GET)
+    public UserPojo getUser(Integer id){
+        long beginTime=System.currentTimeMillis();
+        UserPojo user  = providerService.getUserById(id);
+        long time=System.currentTimeMillis()-beginTime;
+        System.out.println("消耗查询的时间为:" + time);
+        return user;
+    }
 }

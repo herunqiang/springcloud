@@ -7,8 +7,13 @@
             select * from user_t
         </select>
 
+    <select id="getUserById"  resultType="com.hrq.springcloud.entity.UserPojo" parameterType="java.lang.Integer">
+            select * from user_t where ID = #{id,jdbcType=NUMERIC}
+        </select>
     <!-- 新增一条用户信息到数据库中 -->
     <insert id="insertUser" useGeneratedKeys="false" parameterType="com.hrq.springcloud.entity.UserPojo" >
-            insert into user_t(id,user_name,password,age) values (#{id},#{userName},#{password},#{age})
+            insert into user_t(id,user_name,password,age) values (#{id,jdbcType=NUMERIC},#{userName,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{age,jdbcType=NUMERIC})
         </insert>
+
+
 </mapper>

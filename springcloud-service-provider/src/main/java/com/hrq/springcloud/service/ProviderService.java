@@ -1,7 +1,5 @@
 package com.hrq.springcloud.service;
 
-import com.codingapi.txlcn.tc.annotation.DTXPropagation;
-import com.codingapi.txlcn.tc.annotation.TccTransaction;
 import com.codingapi.txlcn.tc.annotation.TxcTransaction;
 import com.hrq.springcloud.entity.UserPojo;
 import com.hrq.springcloud.mapper.UserMapper;
@@ -52,10 +50,14 @@ public class ProviderService  {
 //    @TccTransaction(propagation = DTXPropagation.SUPPORTS)
     @TxcTransaction
     @Transactional
-    @CacheEvict(value = "allUserInfo" )
+    @CacheEvict(value = "allUserInfo",key="'users_'+#userPojo.id")
     public void insertUser(UserPojo userPojo) {
         System.out.println( "新增用户的信息为：username=" + userPojo.getUserName() + ",password=" + userPojo.getPassword() + ",age=" + userPojo.getAge() );
         userMapper.insertUser(userPojo);
        // throw new RuntimeException("分布式事务测试");
+    }
+    @Cacheable(value="allUserInfo", key="'users_'+#id")
+    public UserPojo getUserById(Integer id) {
+        return userMapper.getUserById(id);
     }
 }
