@@ -11,5 +11,5 @@ springcloud-service-lcn:分布式服务服务端
 springcloud-service-provider:服务生产者（被调用方）
 springcloud-service-provider-b:服务生产者b（被调用方）
 springcloud-service-web-provider:系统web层，主要负责系统服务的负载均衡（可以自定义）。
-
+springcloud-service-common:公共模块和其他模块没关系（主要用于公共测试练习使用）
 
