@@ -23,6 +23,7 @@ public class BubbleSort<T extends Number> extends Sort<T>{
                 //升序
             }
         }
+        this.after(data,isDesc);
     }
 
 

@@ -33,30 +33,5 @@ public class SortTest {
         this.isDesc=false;
         new BubbleSort().sort(this.data,isDesc);
     }
-    @After
-    public void after (){
-        System.out.println(sign+"排序后数据：");
-        for (int i = 0; i < data.size(); i++) {
-            Integer num =data.get(i);
 
-            if(i!=data.size() -1) {
-                //降序检查
-                if (this.isDesc) {
-                    if (data.get(i)<data.get(i+1)){
-//                        System.out.print(num + " ");
-                        System.out.print("["+num+"] ");
-                        continue;
-                    }
-                }else{//升序检查
-                    if (data.get(i)>data.get(i+1)){
-//                        System.out.print(num + " ");
-                        System.out.print("["+num+"] ");
-                        continue;
-                    }
-                }
-            }
-            System.out.print(num+"   ");
-        }
-        System.out.println();
-    }
 }
