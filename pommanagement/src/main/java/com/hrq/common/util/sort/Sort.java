@@ -2,7 +2,7 @@ package com.hrq.common.util.sort;
 
 import java.util.List;
 
-public class Sort <T> {
+public abstract class Sort <T> {
     /**
      *
      */
@@ -12,4 +12,11 @@ public class Sort <T> {
         data.set(curData, data.get(nextData));
         data.set(nextData , temp);
     }
+
+    /**
+     * 排序实现
+     * @param data 待排序数据
+     * @param isDesc 是否降序
+     */
+    public abstract void sort(List<T> data,Boolean isDesc);
 }
