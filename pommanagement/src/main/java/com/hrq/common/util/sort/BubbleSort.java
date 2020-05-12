@@ -4,7 +4,7 @@ import java.util.List;
 
 public class BubbleSort<T extends Number> extends Sort<T>{
     /**
-     *
+     * 基本思路：两两比较然后换位，每轮之后就
      * @param data 待排序字段
      * @param isDesc 是否降序
      */
@@ -15,10 +15,14 @@ public class BubbleSort<T extends Number> extends Sort<T>{
                 T curData = data.get(j);
                 T nextData = data.get(j + 1);
                 //降序
-                if(isDesc && curData.doubleValue() < nextData.doubleValue()){
-                    super.exchange(data,j,j + 1);
-                }else if (curData.doubleValue() >nextData.doubleValue()){//升序
-                    super.exchange(data,j,j + 1);
+                if (isDesc) {
+                    if (curData.doubleValue() < nextData.doubleValue()) {
+                        super.exchange(data, j, j + 1);
+                    }
+                } else {
+                    if (curData.doubleValue() > nextData.doubleValue()) {//升序
+                        super.exchange(data, j, j + 1);
+                    }
                 }
                 //升序
             }

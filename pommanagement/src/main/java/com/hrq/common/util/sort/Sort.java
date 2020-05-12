@@ -42,7 +42,7 @@ public abstract class Sort <T extends Number> {
                     if (data.get(i).doubleValue()>data.get(i+1).doubleValue()){
 //                        System.out.print(num + " ");
                         System.out.print("["+num+"] ");
-                        eFlag = "";
+                        eFlag = "2";
                         continue;
                     }
                 }
