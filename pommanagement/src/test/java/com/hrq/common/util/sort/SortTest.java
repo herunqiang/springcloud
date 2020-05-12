@@ -30,8 +30,16 @@ public class SortTest {
     @Test
     public void bubbleSortTest() {
         this.sign = "冒泡";
-        this.isDesc=false;
+        this.isDesc=true;
         new BubbleSort().sort(this.data,isDesc);
     }
-
+    /**
+     * 快速排序测试
+     */
+    @Test
+    public void quickSortTest() {
+        this.sign = "快速";
+        this.isDesc=true;
+        new QuickSort().sort(data,isDesc);
+    }
 }
