@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -41,5 +42,11 @@ public class SortTest {
         this.sign = "快速";
         this.isDesc=true;
         new QuickSort().sort(data,isDesc);
+    }
+    @Test
+    public void insertSortTest() {
+        this.sign = "简单插入排序";
+        this.isDesc=true;
+        new InsertSort().sort(data,isDesc);
     }
 }
