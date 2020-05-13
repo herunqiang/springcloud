@@ -23,9 +23,9 @@ public abstract class Sort <T extends Number> {
      */
     public abstract void sort(List<T> data,Boolean isDesc);
 
-    public void after (List<T> data,Boolean isDesc){
+    public void after (List<T> data,Boolean isDesc,String type){
 
-        System.out.println("冒泡排序后数据：");
+        System.out.println(type+"排序后数据：");
         String eFlag = "";
         for (int i = 0; i < data.size(); i++) {
             T num =data.get(i);

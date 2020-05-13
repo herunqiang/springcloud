@@ -37,6 +37,6 @@ public class InsertSort<T extends Number> extends Sort<T>{
 
             }
         }
-        this.after(data,isDesc);
+        this.after(data,isDesc,"插入");
     }
 }

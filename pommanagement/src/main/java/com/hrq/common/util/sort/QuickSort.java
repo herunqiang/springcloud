@@ -20,7 +20,7 @@ public  class QuickSort <T extends Number> extends Sort<T> {
     public void sort(List<T> data, Boolean isDesc) {
 
         subarea(data,isDesc,0);
-        this.after(data,isDesc);
+        this.after(data,isDesc,"快速");
     }
 
     private void subarea(List<T> data, Boolean isDesc,int povitIndex){

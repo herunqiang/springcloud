@@ -27,7 +27,7 @@ public class BubbleSort<T extends Number> extends Sort<T>{
                 //升序
             }
         }
-        this.after(data,isDesc);
+        this.after(data,isDesc,"冒泡");
     }
 
 
