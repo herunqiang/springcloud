@@ -32,7 +32,7 @@
         <!-- Spring Settings -->
         <spring-cloud.version>Finchley.RC1</spring-cloud.version>
         <hutool.util.version>4.6.10</hutool.util.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <dependencyManagement>
